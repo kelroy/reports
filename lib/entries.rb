@@ -5,7 +5,7 @@ class Entries.
   include DataMapper::Resource
   
   property :id,                 Serial
-  property :transaction_id,     Serial,                   :null => false
+  property :transaction_id,     Serial,                  :null => false
   property :good_id,            Serial
   property :service_id,         Serial
   property :unit_id,            Serial
