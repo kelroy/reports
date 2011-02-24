@@ -5,14 +5,14 @@ class Goods
   include DataMapper::Resource
 
   property :id,                 Serial
-  property :title,              String,                      :null => false
+  property :title,              String,                      :required => true # Need :required => true not :null => false for DataMapper
   property :description,        String
-  property :sku,                String,                      :null => false
-  property :price,              Integer,  :default => 0,     :null => false
-  property :taxable,            Boolean,  :default => true,  :null => false
-  property :discountable,       Boolean,  :default => true,  :null => false
-  property :locked,             Boolean,  :default => false, :null => false
-  property :active,             Boolean,  :default => false, :null => false
+  property :sku,                String,                      :required => true # Need :required => true not :null => false for DataMapper
+  property :price,              Integer,  :default => 0,     :required => true # Need :required => true not :null => false for DataMapper
+  property :taxable,            Boolean,  :default => true,  :required => true # Need :required => true not :null => false for DataMapper
+  property :discountable,       Boolean,  :default => true,  :required => true # Need :required => true not :null => false for DataMapper
+  property :locked,             Boolean,  :default => false, :required => true # Need :required => true not :null => false for DataMapper
+  property :active,             Boolean,  :default => false, :required => true # Need :required => true not :null => false for DataMapper
   property :created_at,         DateTime
   property :updated_at,         DateTime
 

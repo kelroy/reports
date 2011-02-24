@@ -1,6 +1,5 @@
 require 'rubygems'
-require 'sinatra'
 require 'reports'
 
-run Sinatra::Application
-
+# This should be 'run Reports' since your Sinatra::Application is a class you created!
+run Reports
