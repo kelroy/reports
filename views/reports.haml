@@ -1,1 +1,26 @@
-%h1 Hello, World!
+!!! 5
+%html
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'description', :content => "Reports"}
+    %link{:rel => 'icon', :href => '/images/icon.png', :type => 'images/png'}
+    %link{:rel => 'shortcut icon', :href => '/images/icon.png', :type => 'images/png'}
+    <!--[if ! lte IE 6]><!-->
+    %link{:rel => 'stylesheet', :href => '/css/reports.css', :title => 'Reports', :media => 'screen, projection', :type => 'text/css'}
+    <!--<![endif]-->
+    /[if lte IE 6]
+      %link{:rel=>'stylesheet', :href=>'http://universal-ie6-css.googlecode.com/files/ie6.1.1.css', :media => 'screen, projection', :type => 'text/css'}
+    /[if lt IE 9]
+      %script{:type => 'text/javascript', :src => 'http://html5shiv.googlecode.com/svn/trunk/html5.js'}
+    %script{:type => 'text/javascript', :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'}
+    %script{:type => 'text/javascript', :src => '/js/reports.js'}
+    :javascript
+      /* Initiate the application javascript and run */
+      $(document).ready(function(){
+
+        reports.run();
+      
+      });
+    %title Rails
+  %body
+    = yield
