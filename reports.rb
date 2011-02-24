@@ -11,7 +11,7 @@ class Reports < Sinatra::Base
   end
   
   get '/?' do
-    haml :index
+	haml :show, :layout => :reports 
   end
 
   not_found do
