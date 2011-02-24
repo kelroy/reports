@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 
-class Entries.
+class Entries # You had a period after Entries (Entries.)
   include DataMapper::Resource
   
   property :id,                 Serial
