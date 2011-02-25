@@ -1,11 +1,10 @@
 require 'rubygems'
 require 'dm-core'
 
-class Items
+class Item
   include DataMapper::Resource
   
   property :id,                 Serial
-  property :transaction_id,     Integer,                 :required => true 
   property :good_id,            Integer 
   property :title,              String,                  :required => true 
   property :description,        String
@@ -14,4 +13,5 @@ class Items
   property :created_at,         DateTime
   property :updated_at,         DateTime
 
+  belongs_to :transaction
 end
