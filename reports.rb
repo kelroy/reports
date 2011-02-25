@@ -19,13 +19,12 @@ class Reports < Sinatra::Base
   end
   
   get '/?' do
-    # You were missing a tab here... (haml wasn't tabbed over. I fixed it.)
-    # You are asking Haml to render the 'show.haml' file... Hint: That file doesn't exist (But you do have two layout files. Do you mean to?)
-    haml :show
+    #@transaction_data = Transaction.all
+    haml :index
   end
 
   not_found do
-    redirect '/'
+    #redirect '/'
   end
   
   get '/:input' do
