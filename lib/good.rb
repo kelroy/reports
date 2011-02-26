@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 
-class Goods
+class Good
   include DataMapper::Resource
 
   property :id,                 Serial
