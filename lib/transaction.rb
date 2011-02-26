@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 
-class Transactions
+class Transaction
   include DataMapper::Resource
 
   property :id,                  Serial
