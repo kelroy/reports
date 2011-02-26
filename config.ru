@@ -1,5 +1,4 @@
-require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
+require File.expand_path(File.join(File.dirname(__FILE__), 'config/environment.rb'))
 require 'reports'
 
-# This should be 'run Reports' since your Sinatra::Application is a class you created!
 run Reports
