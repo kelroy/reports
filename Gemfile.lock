@@ -2,6 +2,8 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.4)
+    compass (0.10.6)
+      haml (>= 3.0.4)
     data_objects (0.10.3)
       addressable (~> 2.1)
     dm-core (1.0.2)
@@ -17,6 +19,8 @@ GEM
       do_sqlite3 (~> 0.10.2)
     do_sqlite3 (0.10.3)
       data_objects (= 0.10.3)
+    do_sqlite3 (0.10.3-x86-mingw32)
+      data_objects (= 0.10.3)
     extlib (0.9.15)
     haml (3.0.25)
     rack (1.2.1)
@@ -27,8 +31,10 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
+  compass
   dm-core
   dm-migrations
   dm-sqlite-adapter

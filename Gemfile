@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem 'sinatra'
-gme 'compass'
+gem 'compass'
 gem 'haml'
 gem 'dm-core'
 gem 'dm-migrations'
