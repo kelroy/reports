@@ -5,11 +5,15 @@ class PennyHandler
     @amountOfPennies = amountOfPennies
   end
   
+  def initialize()
+    @amountOfPennies = 0;
+  end
+  
   def toDollers
 	if @amountOfPennies >0
 		@amountOfPennies/100.0
 	else
-		0.0
+		0.00
 	end
   end
   
