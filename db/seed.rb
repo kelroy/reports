@@ -6,8 +6,8 @@
     :updated_at => Time.at(t)
   )
   item = Item.create(
-    :price => t,
-    :quantity => t,
+    :price => 100.00 * rand(),
+    :quantity => rand(3),
     :title => "item_#{t}"
   )
   item.transaction = transaction
