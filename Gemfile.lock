@@ -2,6 +2,8 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.4)
+    compass (0.10.6)
+      haml (>= 3.0.4)
     data_objects (0.10.3)
       addressable (~> 2.1)
     dm-core (1.0.2)
@@ -29,6 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  compass
   dm-core
   dm-migrations
   dm-sqlite-adapter

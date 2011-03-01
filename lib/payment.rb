@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 
-class Item
+class Payment
   include DataMapper::Resource
   
   property :id,                 Serial
