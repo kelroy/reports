@@ -10,14 +10,7 @@ class Reports < Sinatra::Base
   end
   
   get '/?' do
-    if params.empty?
-      @transaction_data = Transaction.all
-	  @item_data = Item.all
-	  @pennyHandler = PennyHandler.new(55000)
-    else
-      # Pull the date range
-      # @transaction_data = Transaction.all
-    end
+    @report = Report::Transactions.new(params[:start], params[:finish]).generate
     haml :index
   end
 

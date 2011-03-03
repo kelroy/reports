@@ -1,9 +1,9 @@
 %h1 hello
 %ul
-  - @transaction_data.each do |d|
+  - @report.each do |d|
     %li= d.tax_rate
     %li
       %ul
         - d.items.each do |i|
           %li= i.price
-			%h3= i.quantity
+          %h3= i.quantity
