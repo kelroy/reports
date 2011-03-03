@@ -19,6 +19,8 @@ GEM
       do_sqlite3 (~> 0.10.2)
     do_sqlite3 (0.10.3)
       data_objects (= 0.10.3)
+    do_sqlite3 (0.10.3-x86-mingw32)
+      data_objects (= 0.10.3)
     extlib (0.9.15)
     haml (3.0.25)
     rack (1.2.1)
@@ -29,6 +31,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   compass
