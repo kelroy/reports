@@ -2,8 +2,8 @@
   transaction = Transaction.create(
     :complete => 'True',
     :tax_rate => '.07',
-    :created_at => Time.at(t),
-    :updated_at => Time.at(t)
+    :created_at => Time.utc(2000 + rand(11),1 + rand(11),1 + rand(27)),
+    :updated_at => Time.utc(2000 + rand(11),1 + rand(11),1 + rand(27))
   )
   item = Item.create(
     :price => 100.00 * rand(),

@@ -22,4 +22,12 @@ class Transaction
     end
     sum
   end
+  
+  def self.dump_me
+    transactions = self.all
+    transactions.each do |transaction|
+      puts "id:" +transaction.id.to_s+ " Created At: "+ transaction.created_at.to_s
+    end
+    return nil
+  end
 end
