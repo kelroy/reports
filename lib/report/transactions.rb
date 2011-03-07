@@ -4,7 +4,7 @@ module Report
     
     def generate
       if(@start && @finish)
-        Transaction.all(:created_at.gte => @start) | Transaction.all(:created_at.lte => @finish)
+        Transaction.all(:created_at => (@start..@finish))
       else
         Transaction.all
       end
