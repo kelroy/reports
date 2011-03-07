@@ -13,7 +13,7 @@ module Report
     def dump
       transactions = self.generate
       transactions.each do |transaction|
-        puts "id:" +transaction.id.to_s+ " Created At: "+ transaction.created_at.to_s
+        puts "id: #{transaction.id.to_s} Created At: #{transaction.created_at.to_s}"
       end
       return nil
     end
