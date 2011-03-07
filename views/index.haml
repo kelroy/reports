@@ -1,9 +1,12 @@
-%h1 hello
-%ul
-  - @report.each do |d|
-    %li= d.tax_rate
-    %li
-      %ul
-        - d.items.each do |i|
-          %li= i.price
-          %h3= i.quantity
+!!! 5
+%html
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'description', :content => "Reports"}
+    %link{:rel => 'icon', :href => '/images/icon.png', :type => 'images/png'}
+    %link{:rel => 'shortcut icon', :href => '/images/icon.png', :type => 'images/png'}
+  %body
+    -temp = Report::Transactions.new(Time.utc(2005,1,1),Time.utc(2006,12,21))
+    %p="Total: " + Currency.to_s(temp.total)
+    
+      
