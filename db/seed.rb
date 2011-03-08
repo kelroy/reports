@@ -1,15 +1,14 @@
-(1..100).each do |t|
+(1..rand(1000)).each do |t|
   transaction = Transaction.create(
     :complete => 'True',
     :tax_rate => '.07',
     :created_at => Time.utc(2000 + rand(11),1 + rand(11),1 + rand(27)),
     :updated_at => Time.utc(2000 + rand(11),1 + rand(11),1 + rand(27))
   )
-  item = Item.create(
-    :price => 100.00 * rand(),
-    :quantity => rand(3),
-    :title => "item_#{t}"
+  line = Line.create(
+     :price => 1000 * rand(1000)+5*rand(5)+rand(4),
+     :quantity => rand(5)
   )
-  item.transaction = transaction
-  item.save
+  line.transaction = transaction
+  line.save
 end

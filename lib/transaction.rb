@@ -13,12 +13,13 @@ class Transaction
   property :updated_at,          DateTime
   
   has n, :items
+  has n, :lines
   
-  def self.sum
-    trans = self.all
+  def sum
+    lines = self.lines
     sum = 0
-    trans.each do |t|
-      sum += t.tax_rate
+    lines.each do |line|
+      sum += line.price * line.quantity
     end
     sum
   end
