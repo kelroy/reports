@@ -10,7 +10,7 @@ class Reports < Sinatra::Base
   end
   
   get '/?' do
-    @report = Report::Transactions.new(params[:start], params[:finish]).generate
+    @report = Report::Transactions.new(params[:start_date], params[:end_date])
     haml :index
   end
 
@@ -19,6 +19,7 @@ class Reports < Sinatra::Base
   end
   
   get '/:input' do
-    params[:input]
+    @report = Report::Transactions.new(params[:start_date], params[:end_date])
+    haml :index
   end
 end

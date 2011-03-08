@@ -1,19 +1,30 @@
-!!! 5
-%html
-  %head
-    %meta{:charset => 'utf-8'}
-    %meta{:name => 'description', :content => "Reports"}
-    %link{:rel => 'icon', :href => '/images/icon.png', :type => 'images/png'}
-    %link{:rel => 'shortcut icon', :href => '/images/icon.png', :type => 'images/png'}
-  %body
-    -temp = Report::Transactions.new(Time.utc(2005,1,1),Time.utc(2006,12,21))
-    %p="Total: " + Currency.to_s(temp.total)
+
+%body
+  %div
+    %p="Total: " + Currency.to_s(@report.total)
     -date_now = Time.now.strftime("%Y-%m-%d")
     -start_date = Time.now.strftime("%Y-%m-01")
+    %form{:action => "/range", :method => "get", :name => "date_range_input"}
+      %p
+        %label{:for => "date"} Starting Date:
+        %input#date{:name => "start_date", :type => "date", :value => start_date}
+        %label{:for => "date"} Ending Date:
+        %input#date{:name => "end_date", :type => "date", :value => date_now}
+        %input{:type => "submit", :value => "Submit"}
     %p
-      %label{:for => "date"} Starting Date:
-      %input#date{:type => "date", :value => start_date}
-      %label{:for => "date"} Ending Date:
-      %input#date{:type => "date", :value => date_now}
+      -@start = params[:start_date]
+      -@finish = params[:end_date]
+      -transactions = @report.generate
+      %table{:border => "1"}
+        %tr
+          %th Id
+          %th Total
+          %th Created At
+        -transactions.each do |transaction|
+          %tr
+            %td=transaction.id.to_s
+            %td=Currency.to_s(transaction.sum)
+            %td=transaction.created_at.to_s
+
     
       
