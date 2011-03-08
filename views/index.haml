@@ -24,7 +24,7 @@
           %tr
             %td=transaction.id.to_s
             %td=Currency.to_s(transaction.sum)
-            %td=transaction.created_at.to_s
+            %td=transaction.created_at.strftime('%m-%d-%y %H:%M') 
 
     
       
